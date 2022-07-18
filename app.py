@@ -24,7 +24,7 @@ def perform_query():
     if not os.path.exists(file_path):
         abort(400, "File not found")
 
-    with open(file_name, encoding='utf-8') as file:
+    with open(file_path, encoding='utf-8') as file:
         result = construct_query(cmd_1, value_1, file)
         result = construct_query(cmd_2, value_2, result)
         result = "/n".join(result)
